@@ -151,6 +151,7 @@ def get_readable_message():
                 if download.message.chat.type != 'private':
                     try:
                         chatid = str(download.message.chat.id)[4:]
+                        msg += f"\n<b>Time Elapsed ⌛: </b>{get_readable_time(time() - download.message.date.timestamp())}"
                         msg += f'\n<b>Source Msg: </b><a href="https://t.me/c/{chatid}/{download.message.message_id}">Click Here</a>'
                     except:
                         pass
