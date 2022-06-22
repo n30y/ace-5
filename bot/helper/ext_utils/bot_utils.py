@@ -137,7 +137,7 @@ def get_readable_message():
                     msg += f"\n<b>⏫ Uploaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 else:
                     msg += f"\n<b>⏬ Downloaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
-                msg += f"\n<b>📶 </b> {download.speed()} | <b>ETA:</b> {download.eta()}"
+                msg += f"\n<b>📶 </b> {download.speed()} | <b>🏁 </b> {download.eta()}"
                 try:
                     msg += f"\n<b>🌱 </b> {download.aria_download().num_seeders}" \
                            f" | <b>🌐 </b> {download.aria_download().connections}"
@@ -166,7 +166,7 @@ def get_readable_message():
                 msg += f"\n 🚫 <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             else:
                 msg += f"\n<b>💾 Size: </b>{download.size()}"
-            msg += "\n ▬▬▬▬▬▬▬▬▬▬▬▬▬▬ \n"
+            msg += "\n ▬▬▬▬▬▬▬▬▬▬▬▬▬▬ \n \n"
 
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
