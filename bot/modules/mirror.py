@@ -254,8 +254,7 @@ class MirrorListener:
                 b_uname = bot_d.username
                 botstart = f"http://t.me/{b_uname}"
                 buttons.buildbutton("View file in PM", f"{botstart}")
-msg += f"\n<b>⏳ Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"           
-msg += f'\n<b>Total Files: </b>{folders}'
+            msg += f'\n<b>Total Files: </b>{folders}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
             msg += f'\n<b>cc: </b>{self.tag}\n\n'
@@ -273,7 +272,6 @@ msg += f'\n<b>Total Files: </b>{folders}'
                     uploadmsg = sendMarkup(msg + fmsg, self.bot, self.message, InlineKeyboardMarkup(buttons.build_menu(2)))
                     Thread(target=auto_delete_upload_message, args=(bot, self.message, uploadmsg)).start()
         else:
-msg += f"\n<b>⏳ Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
             msg += f'\n\n<b>Type: </b>{typ}'
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
                 msg += f'\n<b>SubFolders: </b>{folders}'
